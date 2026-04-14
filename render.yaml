@@ -1,0 +1,54 @@
+services:
+  - type: worker
+    name: fiebs-lil-helper-bot
+    runtime: node
+    plan: starter
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: DISCORD_TOKEN
+        sync: false
+      - key: DISCORD_CLIENT_ID
+        sync: false
+      - key: DISCORD_GUILD_ID
+        sync: false
+      - key: SIGNUP_CHANNEL_ID
+        sync: false
+      - key: CHECKIN_CHANNEL_ID
+        sync: false
+      - key: LOBBY_CHANNEL_ID
+        sync: false
+      - key: LEADERBOARD_CHANNEL_ID
+        sync: false
+      - key: STAFF_LOG_CHANNEL_ID
+        sync: false
+      - key: PENALTIES_CHANNEL_ID
+        sync: false
+      - key: HOST_PANEL_CHANNEL_ID
+        sync: false
+      - key: RESULTS_REVIEW_CHANNEL_ID
+        sync: false
+      - key: PROOF_CHANNEL_ID
+        sync: false
+      - key: HOST_ROLE_ID
+        sync: false
+      - key: SENIOR_HOST_ROLE_ID
+        sync: false
+      - key: RESULT_STAFF_ROLE_ID
+        sync: false
+      - key: MODERATOR_ROLE_ID
+        sync: false
+      - key: REGISTERED_ROLE_ID
+        sync: false
+      - key: CHECKEDIN_ROLE_ID
+        sync: false
+      - key: QUEUED_ROLE_ID
+        sync: false
+      - key: BANNED_ROLE_ID
+        sync: false
+      - key: TRUSTED_PLAYER_ROLE_ID
+        sync: false
+      - key: TRUSTED_REPUTATION_THRESHOLD
+        value: 15
+      - key: SCHEDULER_INTERVAL_MS
+        value: 60000
