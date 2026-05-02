@@ -1,18 +1,18 @@
 {
-  "name": "fiebs-lil-helper-bot",
-  "version": "1.0.0",
-  "description": "Combined hosting + giveaway Discord bot for Fieb/Butter servers",
-  "main": "src/index.js",
-  "type": "commonjs",
+  "name": "fiebs-little-helper",
+  "version": "3.1.0",
+  "description": "Fiebs Little Helper with events, giveaways, invites, payments, penalties, event bans and dashboard. No subs or roster modules.",
+  "main": "index.js",
   "scripts": {
-    "start": "node src/index.js",
-    "register": "node scripts/register-commands.js"
-  },
-  "engines": {
-    "node": ">=22.13.0"
+    "start": "node index.js",
+    "deploy": "node deploy-commands.js"
   },
   "dependencies": {
-    "discord.js": "^14.23.2",
-    "dotenv": "^16.6.1"
+    "discord.js": "^14.18.0",
+    "dotenv": "^16.4.7",
+    "node-fetch": "^2.7.0"
+  },
+  "engines": {
+    "node": ">=18.17.0"
   }
 }

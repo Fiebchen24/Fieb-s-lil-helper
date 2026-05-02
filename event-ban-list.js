@@ -1,0 +1,3 @@
+const { SlashCommandBuilder, EmbedBuilder, PermissionFlagsBits } = require('discord.js');
+const banService=require('../services/banService');
+module.exports={data:new SlashCommandBuilder().setName('event-ban-list').setDescription('List active event bans.').setDefaultMemberPermissions(PermissionFlagsBits.ManageGuild),async execute(interaction){const rows=banService.active(); if(!rows.length) return interaction.reply({content:'No active event bans.',ephemeral:true}); const e=new EmbedBuilder().setTitle('Active Event Bans').setDescription(rows.slice(0,25).map(b=>`<@${b.discord_id}> — ${b.reason}${b.expires_at?` — until <t:${Math.floor(new Date(b.expires_at).getTime()/1000)}:D>`:' — permanent'}`).join('\n')); return interaction.reply({embeds:[e],ephemeral:true});}};
